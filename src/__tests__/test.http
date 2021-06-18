@@ -1,0 +1,38 @@
+###
+// Testing URL without anything, just the main page
+GET http://localhost:3001
+
+###
+// Testing URL with the param RG
+GET http://localhost:3001/ciclo/listar/
+
+###
+//Testing cadastrar
+POST http://localhost:3001/ciclo/cadastrar
+Content-Type: application/json
+
+{
+    "data": "2021-04-19",
+    "creditos": [
+        {
+            "nome": "Salário de Abril",
+            "valor": 1200.00
+        },
+        {
+            "nome": "Investimento de Abril",
+            "valor": 200.00
+        }
+    ],
+    "debitos": [
+        {
+            "nome": "Cartão de crédito",
+            "valor": 250.00,
+            "status": "PAGO"
+        },
+        {
+            "nome": "Luz",
+            "valor": 50.00,
+            "status": "AGENDADO"
+        }
+    ]
+}
