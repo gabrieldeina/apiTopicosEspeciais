@@ -1,15 +1,16 @@
-import { Request, Response} from "express"
+import { Request, response, Response} from "express"
 import CicloSchema from "../models/CicloSchema"
 
 class CicloController {
     async listar(req: Request, res: Response){
         try {
             const ciclos = await CicloSchema.find()
-            res.status(200).json({
-                data: ciclos,
-                error: false,
-                msg: "Lista de ciclos de pagamento atualizada!"
-            })  
+            // res.status(200).json({
+            //     data: ciclos,
+            //     error: false,
+            //     msg: "Lista de ciclos de pagamento atualizada!"
+            // })
+            res.status(200).json(ciclos)
         } catch (err) {
             res.status(400).json({
                 data: err,
